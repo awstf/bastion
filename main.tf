@@ -38,12 +38,12 @@ data "aws_iam_policy_document" "bastion" {
 }
 
 resource "aws_iam_role" "role" {
-  name               = "${local.name}-BastionRole"
+  name               = "c-${var.name}-BastionRole"
   assume_role_policy = data.aws_iam_policy_document.sts.json
 }
 
 resource "aws_iam_role_policy" "policy" {
-  name   = "c-${var.name}-BastionPolicy"
+  name   = "${var.name}-BastionPolicy"
   role   = aws_iam_role.role.name
   policy = data.aws_iam_policy_document.bastion.json
 }
