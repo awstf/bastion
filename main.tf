@@ -97,7 +97,7 @@ resource "spotinst_elastigroup_aws" "asg" {
   desired_capacity     = var.desired
   region               = data.aws_region.current.name
   subnet_ids           = var.public_subnets
-  image_id             = data.aws_ami.ami.id
+  image_id             = data.aws_ami.bastion.id
   iam_instance_profile = aws_iam_instance_profile.bastion.arn
   security_groups      = [aws_security_group.sg.id]
   enable_monitoring    = false
