@@ -50,7 +50,7 @@ resource "aws_iam_role_policy" "policy" {
 
 resource "aws_security_group" "sg" {
   name   = "${var.name}-bastion"
-  vpc_id = var.vpc.id
+  vpc_id = var.vpc_id
 
   tags = {
     Name = "${var.name}-bastion"
