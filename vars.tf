@@ -26,11 +26,8 @@ variable "subnets" {
   description = "Public Subnets where to create bastion host."
 }
 
-variable "ec2_type" {
-  description = "Type of the bastion EC2 instance."
-}
-
 variable "whitelist" {
+  default     = ["0.0.0./0"]
   description = "SSH whitelisted IPv4 subnets."
 }
 
