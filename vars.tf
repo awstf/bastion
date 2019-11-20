@@ -27,7 +27,7 @@ variable "subnets" {
 }
 
 variable "whitelist" {
-  default     = ["0.0.0./0"]
+  default     = ["0.0.0.0/0"]
   description = "SSH whitelisted IPv4 subnets."
 }
 
